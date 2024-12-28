@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style >
+      table, td,th{
+        border: 1px solid black;
+        border-collapse: collapse;
+
+      }
+      td{
+        width: 500px;
+      }
+
+      th {
+        /*background-color: grey;*/
+      }
+
+
+
+    </style>
+</head>
+<body>
+<h1>Clothing Store</h1>
+<form>
+    Mã sản phẩm:
+    <input type="text" name="mã sản phẩm" id="maSanPham">
+    <br>
+    <br>
+    Tên sản phẩm:
+    <input type="text" name="Tên sản phẩm" id="tenSanPham">
+    <br>
+    <br>
+    Kích thước:
+    <select>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="XXL">XXL</option>
+    </select>
+    <br>
+    <br>
+    Màu sắc:
+    <select>
+        <option value="White">White</option>
+        <option value="Black">Black</option>
+        <option value="Blue">Blue</option>
+        <option value="Pink">Pink</option>
+        <option value="Beige">Beige</option>
+        <option value="Grey">Grey</option>
+    </select>
+    <br>
+    <br>
+    Giá:
+    <input type="text" name="Giá" id="gia">
+    <br>
+    <br>
+    <input type="button" value="Thêm" onclick="createProduct()">
+</form>
+<br>
+<br>
+<table id="table">
+    <thead>
+    <tr>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Kích thước</th>
+        <th>Màu sắc</th>
+        <th>Giá</th>
+        <th>Hành động</th>
+    </tr>
+    <thead id="tbody"></thead>
+    </thead>
+
+</table>
+</body>
+<script src="form.js">
+
+</script>
+</html>
