@@ -19,10 +19,9 @@ class SanPham {
 
 let danhSachSanPham = [];
 danhSachSanPham.push(new SanPham('001', 'Áo cộc', 'M', 'White', 90_000));
-danhSachSanPham.push(new SanPham('002', 'Quần dài','S', 'Black', 50_000));
+danhSachSanPham.push(new SanPham('002', 'Quần dài', 'S', 'Black', 50_000));
 
-
-
+displayProduct()
 
 function displayProduct() {
     let html = '';
@@ -34,7 +33,7 @@ function displayProduct() {
           <td>${danhSachSanPham[i].mauSac}</td>
           <td>${danhSachSanPham[i].gia}</td>
           <td><button onclick="deleteProduct(${i})">Delete</button>
-          <button onclic="upDateProduct(${i})">UpDate</button>
+          <button onclick="upDateProduct(${i})">UpDate</button>
           <button onclick="editProduct(${i})">Edit</button></td>
           
       </tr>`;
@@ -48,32 +47,27 @@ function deleteProduct(i) {
         displayProduct()
     }
 
-function upDateProduct(i){
-    document.getElementById("maSanPham").value = danhSachSanPham.maSanPham;
-    document.getElementById("tenSanPham").value = danhSachSanPham.tenSanPham;
-    document.getElementById("kichThuoc").value = danhSachSanPham.kichThuoc;
-    document.getElementById("mauSac").value = danhSachSanPham.mauSac;
-    document.getElementById("gia").value = danhSachSanPham.gia;
-displayProduct()
-}
-
-}
-
-    function editProduct(i){
-
+    function upDateProduct(i) {
+        danhSachSanPham[i].maSanPham = document.getElementById("maSanPham").value;
+        danhSachSanPham[i].tenSanPham = document.getElementById("tenSanPham").value;
+        danhSachSanPham[i].kichThuoc = document.getElementById("kichThuoc").value;
+        danhSachSanPham[i].mauSac = document.getElementById("mauSac").value;
+        danhSachSanPham[i].gia = parseInt(document.getElementById("gia").value);
     }
-
-    function createProduct() {
-            let maSanPham = document.getElementById("maSanPham").value;
-            let tenSanPham = document.getElementById("tenSanPham").value;
-            let kichThuoc = document.getElementById("kichThuoc").value;
-            let mauSac = document.getElementById("mauSac").value;
-            let gia = document.getElementById("gia").value;
-            danhSachSanPham.push(new SanPham(maSanPham, tenSanPham, kichThuoc, mauSac, gia));
-            displayProduct()
-        }
-    }
+    displayProduct();
 
 }
 
-displayProduct();
+function editProduct(i) {
+
+}
+
+function createProduct() {
+    let maSanPham = document.getElementById("maSanPham").value;
+    let tenSanPham = document.getElementById("tenSanPham").value;
+    let kichThuoc = document.getElementById("kichThuoc").value;
+    let mauSac = document.getElementById("mauSac").value;
+    let gia = document.getElementById("gia").value;
+    danhSachSanPham.push(new SanPham(maSanPham, tenSanPham, kichThuoc, mauSac, gia));
+    displayProduct();
+}
