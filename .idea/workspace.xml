@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa40fd97-bb8a-428c-b6c2-d999dc1db1a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quan_ly_san_pham/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/quan_ly_san_pham/form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quan_ly_san_pham/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/quan_ly_san_pham/form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quan_ly_san_pham/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/quan_ly_san_pham/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +59,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\codegym\CaseStudy_Module1" />
       <recent name="D:\codegym\CaseStudy_Module1\quan_ly_san_pham" />
     </key>
   </component>
@@ -79,7 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1735520927970</updated>
-      <workItem from="1735520930064" duration="25123000" />
+      <workItem from="1735520930064" duration="25552000" />
     </task>
     <servers />
   </component>
