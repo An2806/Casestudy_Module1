@@ -1,82 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style >
-      table, td,th{
-        border: 1px solid black;
-        border-collapse: collapse;
-
-      }
-      td{
-        width: 500px;
-      }
-
-      th {
-        /*background-color: grey;*/
-      }
-
-
-
-    </style>
-</head>
-<body>
-<h1>Clothing Store</h1>
-<form>
-    Mã sản phẩm:
-    <input type="text" name="mã sản phẩm" id="maSanPham">
-    <br>
-    <br>
-    Tên sản phẩm:
-    <input type="text" name="Tên sản phẩm" id="tenSanPham">
-    <br>
-    <br>
-    Kích thước:
-    <select>
-        <option value="S">S</option>
-        <option value="M">M</option>
-        <option value="L">L</option>
-        <option value="XL">XL</option>
-        <option value="XXL">XXL</option>
-    </select>
-    <br>
-    <br>
-    Màu sắc:
-    <select>
-        <option value="White">White</option>
-        <option value="Black">Black</option>
-        <option value="Blue">Blue</option>
-        <option value="Pink">Pink</option>
-        <option value="Beige">Beige</option>
-        <option value="Grey">Grey</option>
-    </select>
-    <br>
-    <br>
-    Giá:
-    <input type="text" name="Giá" id="gia">
-    <br>
-    <br>
-    <input type="button" value="Thêm" onclick="createProduct()">
-</form>
-<br>
-<br>
-<table id="table">
-    <thead>
-    <tr>
-        <th>Mã sản phẩm</th>
-        <th>Tên sản phẩm</th>
-        <th>Kích thước</th>
-        <th>Màu sắc</th>
-        <th>Giá</th>
-        <th>Hành Động</th>
-    </tr>
-    <thead id="tbody"></thead>
-    </thead>
-
-</table>
-</body>
-<script src="form.js">
-
-</script>
-</html>
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+<!--        <link rel="stylesheet" href="style.css">-->
+    </head>
+    <body>
+    <h1>Quản lý sản phẩm</h1>
+    <div class="form">
+        <form method="post" action="/upload" enctype="multipart/form-data">
+            <label for="maSanPham">Mã sản phẩm: </label>
+            <input type="text" name="mã sản phẩm" id="maSanPham" placeholder="Nhập mã sản phẩm">
+            <br>
+            <br>
+            <label for="tenSanPham">Tên sản phẩm: </label>
+            <input type="text" name="Tên sản phẩm" id="tenSanPham" placeholder="Nhập tên sản phẩm">
+            <br>
+            <br>
+            <label for="kichThuoc">Kích thước:
+                <select id="kichThuoc">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                </select>
+            </label>
+            <br>
+            <br>
+            <label for="mauSac">Màu sắc:
+                <select id="mauSac">
+                    <option value="White">White</option>
+                    <option value="Black">Black</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Beige">Beige</option>
+                    <option value="Grey">Grey</option>
+                </select>
+            </label>
+            <br>
+            <br>
+            <label for="soLuong">Số Lượng: </label>
+            <input type="number" id="soLuong" name="soLuong" placeholder="Nhập Số Lượng">
+            <br>
+            <br>
+            <label for="gia">Giá: </label>
+            <input type="text" name="Giá" id="gia" placeholder="Nhập giá">
+            <br>
+            <br>
+            <button type="button" onclick="createProduct()" id="addSp">Add</button>
+            <button type="button" onclick="resetProduct()" id="rsSp"> Reset</button>
+        </form>
+        <br>
+        <br>
+    </div>
+    <div class="view">
+        <div class="product"> <input type="text" id="tìm kiếm" name="timKiem" placeholder="Tìm kiếm sản phẩm"><button type="button" onclick="searchProduct()" id="search">Tìm Kiếm</button>
+            <table id="table">
+                <thead>
+                <tr>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Kích thước</th>
+                    <th>Màu sắc</th>
+                    <th>Số Lượng</th>
+                    <th>Giá</th>
+                    <th>Hành Động</th>
+                </tr>
+                <thead id="tbody"></thead>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <script src="form.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,155 @@
+/* Cấu hình chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background và màu sắc tổng thể */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf6e3;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #e74c3c; /* Màu đỏ Tết */
+    margin-top: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Chữ trong form */
+.form {
+    background-color: #fff;
+    width: 50%;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e74c3c; /* Viền đỏ Tết */
+    background-image: url('https://www.transparenttextures.com/patterns/wood-mist.png');
+    background-repeat: repeat;
+}
+
+/* Form Inputs */
+.form input, .form select, .form button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.form input[type="text"], .form input[type="number"], .form select {
+    background-color: #f9f9f9;
+}
+
+/* Nút thêm sản phẩm */
+.form button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+    background-color: #c0392b;
+}
+
+.form button:focus {
+    outline: none;
+}
+
+/* Chế độ hover cho các input */
+.form input:focus, .form select:focus {
+    border-color: #e74c3c;
+    background-color: #ffebeb;
+}
+
+/* View phần bảng */
+.view {
+    width: 80%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+th {
+    background-color: #e74c3c;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Thêm hiệu ứng cho các nút hành động trong bảng */
+td button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+td button:hover {
+    background-color: #2980b9;
+}
+
+/* Trang trí hoa đào */
+body::after {
+    content: "🌸";
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    font-size: 60px;
+    transform: rotate(45deg);
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0) rotate(45deg); }
+    50% { transform: translateY(-30px) rotate(45deg); }
+    100% { transform: translateY(0) rotate(45deg); }
+}
+
+/* Màu sắc nơ và viền Tết */
+.nhantay {
+    background-color: #f1c40f; /* Màu vàng Tết */
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    font-size: 24px;
+}
+
