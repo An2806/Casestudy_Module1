@@ -1,61 +1,50 @@
-    <!DOCTYPE html>
-    <html lang="vi">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-<!--        <link rel="stylesheet" href="style.css">-->
-    </head>
-    <body>
-    <h1>Quản lý sản phẩm</h1>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+            <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Quản lý sản phẩm</h1>
+<div class="mainbody">
     <div class="form">
         <form method="post" action="/upload" enctype="multipart/form-data">
             <label for="maSanPham">Mã sản phẩm: </label>
             <input type="text" name="mã sản phẩm" id="maSanPham" placeholder="Nhập mã sản phẩm">
-            <br>
-            <br>
             <label for="tenSanPham">Tên sản phẩm: </label>
             <input type="text" name="Tên sản phẩm" id="tenSanPham" placeholder="Nhập tên sản phẩm">
-            <br>
-            <br>
             <label for="kichThuoc">Kích thước:
                 <select id="kichThuoc">
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
+                    <option value="XS">XS (38kg - 45kg)</option>
+                    <option value="S">S (45kg - 50kg)</option>
+                    <option value="M">M (50kg - 57kg)</option>
+                    <option value="L">L (57kg - 65kg)</option>
+                    <option value="XL">XL (65kg -75kg)</option>
+                    <option value="XXL">XXL (75kg - 85kg)</option>
                 </select>
             </label>
-            <br>
-            <br>
             <label for="mauSac">Màu sắc:
                 <select id="mauSac">
-                    <option value="White">White</option>
-                    <option value="Black">Black</option>
-                    <option value="Blue">Blue</option>
-                    <option value="Pink">Pink</option>
-                    <option value="Beige">Beige</option>
-                    <option value="Grey">Grey</option>
+                    <option value="White">White (Màu Trắng)</option>
+                    <option value="Black">Black (Màu Đen)</option>
+                    <option value="Blue">Blue (Màu Xanh)</option>
+                    <option value="Pink">Pink (Màu Hồng)</option>
+                    <option value="Beige">Beige (Màu Be)</option>
+                    <option value="Grey">Grey (Màu Xám)</option>
                 </select>
             </label>
-            <br>
-            <br>
             <label for="soLuong">Số Lượng: </label>
             <input type="number" id="soLuong" name="soLuong" placeholder="Nhập Số Lượng">
-            <br>
-            <br>
             <label for="gia">Giá: </label>
             <input type="text" name="Giá" id="gia" placeholder="Nhập giá">
-            <br>
-            <br>
             <button type="button" onclick="createProduct()" id="addSp">Add</button>
             <button type="button" onclick="resetProduct()" id="rsSp"> Reset</button>
         </form>
-        <br>
-        <br>
     </div>
     <div class="view">
-        <div class="product"> <input type="text" id="tìm kiếm" name="timKiem" placeholder="Tìm kiếm sản phẩm"><button type="button" onclick="searchProduct()" id="search">Tìm Kiếm</button>
+        <div class="product"><label for="tìm kiếm"></label><input type="text" id="tìm kiếm" name="timKiem" placeholder="Tìm kiếm sản phẩm">
+            <button type="button" onclick="searchProduct()" id="search">Tìm Kiếm</button>
             <table id="table">
                 <thead>
                 <tr>
@@ -72,6 +61,7 @@
             </table>
         </div>
     </div>
-    <script src="form.js"></script>
-    </body>
-    </html>
+</div>
+<script src="form.js"></script>
+</body>
+</html>

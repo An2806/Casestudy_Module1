@@ -1,155 +1,166 @@
-/* Cấu hình chung */
-* {
+/* Đặt font và cấu trúc cơ bản */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Background và màu sắc tổng thể */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fdf6e3;
+    background-color: #fffaf0; /* Màu nền nhã nhặn */
     color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://example.com/hoa-dao.png'), url('https://example.com/den-long.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top, right bottom;
+    background-size: 250px, 250px;
 }
 
 h1 {
     text-align: center;
-    font-size: 40px;
-    color: #e74c3c; /* Màu đỏ Tết */
-    margin-top: 50px;
+    color: #b02a37;
+    padding: 20px 0;
+    margin: 0;
+    font-size: 28px;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Đổ bóng cho tiêu đề */
 }
 
-/* Chữ trong form */
-.form {
-    background-color: #fff;
-    width: 50%;
-    max-width: 700px;
-    margin: 30px auto;
+/* Cấu trúc bố cục 2 phần */
+.mainbody {
+    display: flex;
+    flex-direction: row;
+    width: 1450px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #e74c3c; /* Viền đỏ Tết */
-    background-image: url('https://www.transparenttextures.com/patterns/wood-mist.png');
-    background-repeat: repeat;
+    gap: 5px;
+    flex-grow: 1;
+    height: 100vh; /* Đảm bảo chiều cao cố định */
 }
 
-/* Form Inputs */
-.form input, .form select, .form button {
+/* Phần form bên trái */
+.form {
+    flex: 1;
+    padding: 20px;
+    gap:5px;
+    border-right: 3px solid #ddd;
+}
+
+form label {
+    padding: 5px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+form input{
+    width: 92%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+form select {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 12px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
     font-size: 14px;
 }
 
-.form input[type="text"], .form input[type="number"], .form select {
-    background-color: #f9f9f9;
-}
-
-/* Nút thêm sản phẩm */
-.form button {
-    background-color: #e74c3c;
-    color: white;
+form button {
+    padding: 10px 20px;
     border: none;
-    padding: 12px 18px;
-    border-radius: 6px;
+    border-radius: 4px;
+    background-color: #b02a37;
+    color: white;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     transition: background-color 0.3s ease;
 }
 
-.form button:hover {
-    background-color: #c0392b;
+form button:hover {
+    background-color: #900a24;
 }
 
-.form button:focus {
-    outline: none;
-}
-
-/* Chế độ hover cho các input */
-.form input:focus, .form select:focus {
-    border-color: #e74c3c;
-    background-color: #ffebeb;
-}
-
-/* View phần bảng */
+/* Phần bên phải để hiển thị thông tin */
 .view {
-    width: 80%;
-    max-width: 1200px;
-    margin: 30px auto;
+    flex: 2;
+    padding: 20px;
 }
 
-table {
+.view table {
     width: 100%;
-    margin-top: 20px;
     border-collapse: collapse;
+    margin-top: 20px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #b02a37; /* Đường viền đậm */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Hiệu ứng đổ bóng */
 }
 
-th, td {
+.view th,
+.view td {
     padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
-    font-size: 14px;
+    border: 2px solid #b02a37; /* Đường viền đậm */
+    text-align: left;
 }
 
-th {
-    background-color: #e74c3c;
-    color: white;
-    font-weight: bold;
+.view th {
+    background-color: #f8d8dc;
+    font-size: 16px;
 }
 
-td {
-    background-color: #f9f9f9;
+.view tbody tr:nth-child(even) {
+    background-color: #fffaf0; /* Màu nền xen kẽ */
 }
 
-/* Thêm hiệu ứng cho các nút hành động trong bảng */
-td button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
+.view tbody tr:hover {
+    background-color: #fae3e7;
 }
 
-td button:hover {
-    background-color: #2980b9;
+/* Hiệu ứng Tết */
+@keyframes flowerFall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
-/* Trang trí hoa đào */
-body::after {
-    content: "🌸";
-    position: absolute;
-    top: 10%;
-    left: 80%;
-    font-size: 60px;
-    transform: rotate(45deg);
-    animation: floating 3s ease-in-out infinite;
+.flower {
+    position: fixed;
+    top: -50px;
+    left: calc(50% - 15px);
+    width: 30px;
+    height: auto;
+    animation: flowerFall 5s infinite ease-in-out;
+    opacity: 0;
 }
 
-@keyframes floating {
-    0% { transform: translateY(0) rotate(45deg); }
-    50% { transform: translateY(-30px) rotate(45deg); }
-    100% { transform: translateY(0) rotate(45deg); }
+/* Đèn lồng di động */
+@keyframes lanternSwing {
+    0% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
 }
 
-/* Màu sắc nơ và viền Tết */
-.nhantay {
-    background-color: #f1c40f; /* Màu vàng Tết */
-    color: #fff;
-    padding: 10px;
-    border-radius: 50%;
-    text-align: center;
-    font-weight: bold;
-    position: absolute;
-    top: 15%;
-    left: 5%;
-    font-size: 24px;
+#lantern {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    width: 80px;
+    height: auto;
+    animation: lanternSwing 3s infinite ease-in-out;
 }
-

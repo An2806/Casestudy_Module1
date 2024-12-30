@@ -29,12 +29,13 @@ function displayProduct() {
           <td>${danhSachSanPham[i].tenSanPham}</td>
           <td>${danhSachSanPham[i].kichThuoc}</td>
           <td>${danhSachSanPham[i].mauSac}</td>
-          <td>${danhSachSanPham[i].soLuong}</td
+          <td>${danhSachSanPham[i].soLuong}</td>
           <td>${danhSachSanPham[i].gia}</td>
-          <td><button onclick="editProduct(${i})">Edit</button>
-          <button onclick="upDateProduct(${i})">UpDate</button>
-          <button onclick="deleteProduct(${i})">Delete</button></td>
-          
+          <td>
+            <button onclick="editProduct(${i})">Edit</button>
+            <button onclick="upDateProduct(${i})">Update</button>
+            <button onclick="deleteProduct(${i})">Delete</button>
+          </td>
       </tr>`;
     }
     document.getElementById("tbody").innerHTML = html;
