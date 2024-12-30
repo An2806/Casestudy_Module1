@@ -19,7 +19,7 @@ class SanPham {
 }
 
 danhSachSanPham.push(new SanPham('001', 'Áo cộc', 'M', 'White', 1, 90_000));
-danhSachSanPham.push(new SanPham('002', 'Quần dài', 'S', 'Black', 2, 50_000, ));
+danhSachSanPham.push(new SanPham('002', 'Quần dài', 'S', 'Black', 2, 50_000,));
 
 function displayProduct() {
     let html = '';
@@ -30,11 +30,11 @@ function displayProduct() {
           <td>${danhSachSanPham[i].kichThuoc}</td>
           <td>${danhSachSanPham[i].mauSac}</td>
           <td>${danhSachSanPham[i].soLuong}</td>
-          <td>${danhSachSanPham[i].gia}</td>
+          <td>${formatCurrency(danhSachSanPham[i].gia)}</td>
           <td>
-            <button onclick="editProduct(${i})">Edit</button>
-            <button onclick="upDateProduct(${i})">Update</button>
-            <button onclick="deleteProduct(${i})">Delete</button>
+            <button class="btn-edit" onclick="editProduct(${i})">Edit</button>
+            <button class="btn-update" onclick="upDateProduct(${i})">Update</button>
+            <button class="btn-delete" onclick="deleteProduct(${i})">Delete</button>
           </td>
       </tr>`;
     }
@@ -102,7 +102,7 @@ function deleteProduct(i) {
     }
 }
 
-function resetProduct(){
+function resetProduct() {
     document.getElementById("maSanPham").value = "";
     document.getElementById("tenSanPham").value = "";
     document.getElementById("kichThuoc").value = "";
@@ -110,14 +110,45 @@ function resetProduct(){
     document.getElementById("soLuong").value = "";
     document.getElementById("gia").value = "";
 }
+
 // Tìm kiếm sản phẩm
 function searchProduct() {
-    let searchKeyword = document.getElementById("tenSanPham").value.toLowerCase();
-    let filteredList = danhSachSanPham.filter(sp =>
+    const searchKeyword = document.getElementById("tìm kiếm").value.toLowerCase().trim(); // Lấy từ khóa tìm kiếm từ input
+    const filteredList = danhSachSanPham.filter(sp =>
         sp.maSanPham.toLowerCase().includes(searchKeyword) ||
         sp.tenSanPham.toLowerCase().includes(searchKeyword)
     );
-    displayProduct(filteredList);  // Hiển thị kết quả tìm kiếm
+
+    let html = '';
+    for (let i = 0; i < filteredList.length; i++) {
+        html += `<tr>
+            <td>${filteredList[i].maSanPham}</td>
+            <td>${filteredList[i].tenSanPham}</td>
+            <td>${filteredList[i].kichThuoc}</td>
+            <td>${filteredList[i].mauSac}</td>
+            <td>${filteredList[i].soLuong}</td>
+            <td>${formatCurrency(filteredList[i].gia)}</td>
+            <td>
+                <button class="btn-edit" onclick="editProduct(${i})">Edit</button>
+                <button class="btn-update" onclick="upDateProduct(${i})">Update</button>
+                <button class="btn-delete" onclick="deleteProduct(${i})">Delete</button>
+            </td>
+        </tr>`;
+    }
+
+    // Hiển thị kết quả tìm kiếm trong bảng
+    if (filteredList.length > 0) {
+        document.getElementById("tbody").innerHTML = html;
+    } else {
+        document.getElementById("tbody").innerHTML = '<tr><td colspan="7">Không tìm thấy sản phẩm phù hợp</td></tr>';
+    }
 }
+
 displayProduct(danhSachSanPham);
+
+//Định dạng giá tiền
+function formatCurrency(value) {
+    // Định dạng số thành dạng "100.000 VNĐ"
+    return new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'}).format(value).replace('₫', 'VNĐ');
+}
 

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-            <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1>Quản lý sản phẩm</h1>
 <div class="mainbody">
     <div class="form">
-        <form method="post" action="/upload" enctype="multipart/form-data">
+        <form method="get" action="/upload" enctype="multipart/form-data">
             <label for="maSanPham">Mã sản phẩm: </label>
             <input type="text" name="mã sản phẩm" id="maSanPham" placeholder="Nhập mã sản phẩm">
             <label for="tenSanPham">Tên sản phẩm: </label>
@@ -43,8 +43,9 @@
         </form>
     </div>
     <div class="view">
-        <div class="product"><label for="tìm kiếm"></label><input type="text" id="tìm kiếm" name="timKiem" placeholder="Tìm kiếm sản phẩm">
-            <button type="button" onclick="searchProduct()" id="search">Tìm Kiếm</button>
+        <div class="product"><label for="tìm kiếm"></label><input type="text" id="tìm kiếm" name="timKiem"
+                                                                  placeholder="Tìm kiếm sản phẩm">
+            <button class="btn-search" type="button" onclick="searchProduct()" id="search">Tìm Kiếm</button>
             <table id="table">
                 <thead>
                 <tr>
@@ -61,6 +62,16 @@
             </table>
         </div>
     </div>
+</div>
+<div class="fireworks">
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+</div>
+
+<!-- Trang trí cành mai -->
+<div class="decorations">
+    <img src="https://example.com/branch.png" alt="Cành mai" class="branch">
 </div>
 <script src="form.js"></script>
 </body>
