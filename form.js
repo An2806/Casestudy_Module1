@@ -121,9 +121,8 @@ function searchProduct() {
         sp.maSanPham.toLowerCase().includes(searchKeyword) ||
         sp.tenSanPham.toLowerCase().includes(searchKeyword) ||
         sp.kichThuoc.toLowerCase().includes(searchKeyword) ||
-        sp.soLuong.toLowerCase().includes(searchKeyword)   ||
         sp.mauSac.toLowerCase().includes(searchKeyword)
-    ); // Lọc sản phẩm theo mã hoặc tênc
+    ); // Lọc sản phẩm theo mã hoặc tên
 
     let html = '';
     for (let i = 0; i < filteredList.length; i++) {
@@ -136,7 +135,6 @@ function searchProduct() {
             <td>${formatCurrency(filteredList[i].gia)}</td>
             <td>
                 <button class="btn-edit" onclick="editProduct(${i})">Edit</button>
-                <button class="btn-update" onclick="upDateProduct(${i})">Update</button>
                 <button class="btn-delete" onclick="deleteProduct(${i})">Delete</button>
             </td>
         </tr>`;
