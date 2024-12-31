@@ -122,41 +122,6 @@ form button:hover {
     transform: scale(1.05);
 }
 
-/* Hiệu ứng Tết */
-@keyframes flowerFall {
-    0% {
-        transform: translateY(-50px) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-.flower {
-    position: fixed;
-    top: -50px;
-    left: calc(50% - 15px);
-    width: 30px;
-    height: auto;
-    animation: flowerFall 5s infinite ease-in-out;
-    opacity: 0;
-}
-
-/* Đèn lồng di động */
-@keyframes lanternSwing {
-    0% {
-        transform: rotate(-5deg);
-    }
-    50% {
-        transform: rotate(5deg);
-    }
-    100% {
-        transform: rotate(-5deg);
-    }
-}
-
 #lantern {
     position: fixed;
     top: 20px;
@@ -191,7 +156,7 @@ form button:hover {
 
 /* Nút Delete */
 .btn-delete {
-    background-color: #45a049;
+    background-color: #C70039;
     color: white;
     border-radius: 8px ;
 }
@@ -219,4 +184,3 @@ form button:hover {
     width: 200px;
     height: 25px;
 }
-
