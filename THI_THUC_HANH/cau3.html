@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <title>Sổ Tiết Kiệm</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-$END$
+<h2>Danh Sách Sổ Tiết Kiệm</h2>
+<button type="button" onclick="createCustomers()" id="themSOTietKiem">Thêm Sổ Tiết Kiệm</button>
+<button type="button" onclick="deleteCustomers()" id="xoa">Xóa</button>
+<br>
+<br>
+<br>
+<table id = "table">
+    <tr>
+        <th>Mã sổ</th>
+        <th>Loại tiết kiệm</th>
+        <th>Họ tên khách hàng</th>
+        <th>CMND</th>
+        <th>Ngày mở sổ</th>
+        <th>Số tiền gửi</th>
+    </tr>
+</table>
+<script src="cau3.js"></script>
 </body>
 </html>

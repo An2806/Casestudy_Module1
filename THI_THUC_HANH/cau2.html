@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  function areFractionsEqual(a1, b1, a2, b2) {
+    // Kiểm tra điều kiện so sánh phân số
+    if (a1 * b2 === a2 * b1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
+  let a1 = parseInt(prompt("Nhập tử số của phân số thứ nhất:"));
+  let b1 = parseInt(prompt("Nhập mẫu số của phân số thứ nhất:"));
+  let a2 = parseInt(prompt("Nhập tử số của phân số thứ hai:"));
+  let b2 = parseInt(prompt("Nhập mẫu số của phân số thứ hai:"));
+
+  
+  if (areFractionsEqual(a1, b1, a2, b2)) {
+    document.write("Hai phân số bằng nhau.");
+  } else {
+    document.write("Hai phân số không bằng nhau.");
+  }
+
+</script>
 </body>
 </html>
